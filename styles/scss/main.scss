@@ -1,0 +1,41 @@
+@import "reset";
+
+body {
+  overflow: hidden;
+}
+
+.dex-app {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  height: 100%;
+  overflow: auto;
+}
+
+
+.pokemon-list {
+  li {
+    cursor: pointer;
+
+    &.is-active {
+      font-weight: bold;
+    }
+  }
+}
+
+.pokemon-detail {
+  padding: 1.5em;
+
+  h1 {
+    font-size: 3em;
+  }
+}
+
+.pokemon-family {
+  margin-top: 1em;
+  ul ul {
+    padding-left: 1em;
+  }
+}
