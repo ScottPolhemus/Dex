@@ -16,9 +16,7 @@
     "nuclear-js": "^1.4.0",
     "nuclear-js-react-addons": "^0.4.1",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "react-redux": "^5.0.1",
-    "redux": "^3.6.0"
+    "react-dom": "^15.4.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.4",
