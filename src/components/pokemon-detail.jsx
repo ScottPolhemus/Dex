@@ -38,10 +38,17 @@ export default class PokemonDetail extends Component {
       weight
     } = this.props.pokemon.toJS()
 
+    const dexNum = ("00"+ndex).slice(-3)
+
+    const {
+      layout
+    } = this.props
+
     if (ndex) {
       return (<div className="pokemon-detail">
         <h1>{species}</h1>
         <h2>{pClass} - {height}, {weight}</h2>
+        <img src={`http://assets.pokemon.com/assets/cms2/img/pokedex/full/${dexNum}.png`} />
         {this.renderFamily()}
       </div>)
     }

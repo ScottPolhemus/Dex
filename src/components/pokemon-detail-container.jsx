@@ -12,16 +12,18 @@ import actions from '../modules/pokemon/actions'
 export default class PokemonDetailContainer extends Component {
   static propTypes = {
     selectedPokemon: PropTypes.object,
-    selectedPokemonFamily: PropTypes.object
+    selectedPokemonFamily: PropTypes.object,
+    layout: PropTypes.string.isRequired
   }
   render() {
     const {
       selectedPokemon,
-      selectedPokemonFamily
+      selectedPokemonFamily,
+      layout
     } = this.props
 
     return (<PokemonDetail pokemon={selectedPokemon} family={selectedPokemonFamily} onSelectPokemon={(selectedPokemon) => {
         actions.selectPokemon(selectedPokemon)
-    }} />)
+    }} layout={layout} />)
   }
 }
