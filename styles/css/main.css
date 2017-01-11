@@ -54,14 +54,28 @@ body {
   display: flex;
   height: 100vh; }
 
-.sidebar {
+.dex-list {
   height: 100%;
   overflow: auto; }
+  .dex-layout-grid .dex-list {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
 
 .pokemon-list li {
   cursor: pointer; }
   .pokemon-list li.is-active {
     font-weight: bold; }
+  .dex-layout-grid .pokemon-list li {
+    display: inline-block;
+    width: 100px;
+    height: 100px; }
+  .pokemon-list li img {
+    max-width: 100%; }
+    .dex-layout-list .pokemon-list li img {
+      max-width: 40px;
+      display: inline-block;
+      vertical-align: middle; }
 
 .pokemon-detail {
   padding: 1.5em; }

@@ -11,16 +11,19 @@ import actions from '../modules/pokemon/actions'
 }))
 export default class PokemonListContainer extends Component {
   static propTypes = {
-    pokemonList: PropTypes.object.isRequired
+    pokemonList: PropTypes.object.isRequired,
+    selectedPokemon: PropTypes.object,
+    layout: PropTypes.string
   }
   render() {
     const {
       pokemonList,
-      selectedPokemon
+      selectedPokemon,
+      layout
     } = this.props
 
     return (<PokemonList pokemonList={pokemonList} selectedPokemon={selectedPokemon} onSelectPokemon={(selectedPokemon) => {
         actions.selectPokemon(selectedPokemon)
-    }} />)
+    }} layout={layout} />)
   }
 }

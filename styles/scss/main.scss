@@ -9,11 +9,14 @@ body {
   height: 100vh;
 }
 
-.sidebar {
+.dex-list {
   height: 100%;
   overflow: auto;
-}
 
+  .dex-layout-grid & {
+    flex: 1;
+  }
+}
 
 .pokemon-list {
   li {
@@ -21,6 +24,22 @@ body {
 
     &.is-active {
       font-weight: bold;
+    }
+
+    .dex-layout-grid & {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+    }
+
+    img {
+      max-width: 100%;
+
+      .dex-layout-list & {
+        max-width: 40px;
+        display: inline-block;
+        vertical-align: middle;
+      }
     }
   }
 }
@@ -31,10 +50,15 @@ body {
   h1 {
     font-size: 3em;
   }
+
+  // .dex-layout-grid & {
+  //   display: none;
+  // }
 }
 
 .pokemon-family {
   margin-top: 1em;
+
   ul ul {
     padding-left: 1em;
   }
