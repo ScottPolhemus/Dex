@@ -26,12 +26,18 @@ const selectedPokemon = [
 
 function getBase(pkmn, list) {
   if (!pkmn.get('pre-evolution')) {
+    // No pre-evolution
     return pkmn
   }
 
   const pre = list.find((p) => {
     return p.get('species') === pkmn.get('pre-evolution')
   })
+
+  if (!pre) {
+    // Pre-evolution is not visible in current dex
+    return pkmn
+  }
 
   return getBase(pre, list)
 }
