@@ -7,7 +7,7 @@ const pokemonList = ['pokemon', 'list']
 const pokedexList = [
   pokemonList,
   (pokemonList) => {
-    return pokemonList.setSize(801)
+    return pokemonList.setSize(151)
   }
 ]
 
@@ -64,7 +64,7 @@ function getFamily(basePkmn, list) {
 }
 
 const selectedPokemonFamily = [
-  pokemonList,
+  pokedexList,
   selectedPokemon,
   (list, selected) => {
     if (selected) {

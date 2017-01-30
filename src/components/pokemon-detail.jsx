@@ -3,7 +3,7 @@ import _ from 'lodash'
 
 function renderEvoTree(pokemon) {
   if (pokemon.get('evolutions')) {
-    return (<ul key={pokemon.get('species')}>
+    return (<ul key={pokemon.get('id')}>
       <li>{pokemon.get('species')}
       {pokemon.get('evolutions').map((p) => {
         return renderEvoTree(p)
@@ -12,7 +12,7 @@ function renderEvoTree(pokemon) {
     </ul>)
   }
 
-  return (<ul key={pokemon.get('species')}><li>{pokemon.get('species')}</li></ul>)
+  return (<ul key={pokemon.get('id')}><li>{pokemon.get('species')}</li></ul>)
 }
 
 export default class PokemonDetail extends Component {
@@ -28,6 +28,9 @@ export default class PokemonDetail extends Component {
     if (this.props.family.get('evolutions')) {
       return (<div className="pokemon-family">{renderEvoTree(this.props.family)}</div>)
     }
+  }
+  renderAvailableGamesList() {
+    
   }
   render() {
     const {
@@ -50,6 +53,8 @@ export default class PokemonDetail extends Component {
         <h2>{pClass} - {height}, {weight}</h2>
         <img src={`http://assets.pokemon.com/assets/cms2/img/pokedex/full/${dexNum}.png`} />
         {this.renderFamily()}
+        <p>Available in:</p>
+        {this.renderAvailableGamesList()}
       </div>)
     }
 

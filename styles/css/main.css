@@ -77,6 +77,15 @@ body {
       display: inline-block;
       vertical-align: middle; }
 
+.dex-layout-grid .pokemon-list ul {
+  text-align: justify; }
+
+.dex-detail {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: auto; }
+
 .pokemon-detail {
   padding: 1.5em; }
   .pokemon-detail h1 {

@@ -42,6 +42,18 @@ body {
       }
     }
   }
+
+  ul {
+    .dex-layout-grid & {
+      text-align: justify;
+      // display: flex;
+    }
+  }
+}
+
+.dex-detail {
+  flex: 1;
+  overflow: auto;
 }
 
 .pokemon-detail {
