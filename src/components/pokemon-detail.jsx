@@ -19,6 +19,7 @@ export default class PokemonDetail extends Component {
   static propTypes = {
     pokemon: PropTypes.object,
     family: PropTypes.object,
+    art: PropTypes.object,
     onSelectPokemon: PropTypes.func.isRequired
   }
   constructor(props) {
@@ -29,8 +30,19 @@ export default class PokemonDetail extends Component {
       return (<div className="pokemon-family">{renderEvoTree(this.props.family)}</div>)
     }
   }
+  renderFanArt() {
+    const {art} = this.props;
+
+    if(art && art.size) {
+      const first = art.get(0);
+      console.log(first.toJS());
+      return (<div>
+        <img src={first.getIn(['media:content', '@', 'url'])} />
+      </div>);
+    }
+  }
   renderAvailableGamesList() {
-    
+
   }
   render() {
     const {
@@ -51,7 +63,8 @@ export default class PokemonDetail extends Component {
       return (<div className="pokemon-detail">
         <h1>{species}</h1>
         <h2>{pClass} - {height}, {weight}</h2>
-        <img src={`http://assets.pokemon.com/assets/cms2/img/pokedex/full/${dexNum}.png`} />
+        {this.renderFanArt()}
+        {/*<img src={`http://assets.pokemon.com/assets/cms2/img/pokedex/full/${dexNum}.png`} />*/}
         {this.renderFamily()}
         <p>Available in:</p>
         {this.renderAvailableGamesList()}

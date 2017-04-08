@@ -36,6 +36,7 @@ export default class GamesSelector extends Component {
           <label className="games-selector-option">Sun <input type="checkbox" name="games" value="sun" checked={games.sun} onChange={::this.onSelectGame} /></label>
           <label className="games-selector-option">Moon <input type="checkbox" name="games" value="moon" checked={games.moon} onChange={::this.onSelectGame} /></label>
         </div>
+        {/*
         <div className="games-gen games-gen-xy">
           <button onClick={() => {::this.toggleMulti(['x', 'y'])}}>xy</button>
           <label className="games-selector-option">X <input type="checkbox" name="games" value="x" checked={games.x} onChange={::this.onSelectGame} /></label>
@@ -87,6 +88,7 @@ export default class GamesSelector extends Component {
           <label className="games-selector-option">Blue <input type="checkbox" name="games" value="blue" checked={games.blue} onChange={::this.onSelectGame} /></label>
           <label className="games-selector-option">Yellow <input type="checkbox" name="games" value="yellow" checked={games.yellow} onChange={::this.onSelectGame} /></label>
         </div>
+        */}
       </div>
     </div>)
   }
