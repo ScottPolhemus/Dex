@@ -1,17 +1,24 @@
 import React from 'react'
-import { render } from 'react-dom'
-import { Provider, connect, nuclearMixin } from 'nuclear-js-react-addons'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 
-import reactor from './reactor'
-import PokemonStore from './modules/pokemon/store'
-import DexApp from './components/app.jsx';
+import DexApp from './components/app.jsx'
+import pokemonList from '../data/sm-pokemon.csv'
 
-reactor.registerStores({
-  'pokemon': PokemonStore
-})
+import configureStore from './store'
 
-window.onload = function() {
-  render(<Provider reactor={reactor}>
-    <DexApp />
-  </Provider>, document.querySelector('[data-dex-app]'))
+const initialState = {
+  pokemon: {
+    selected: 0,
+    list: pokemonList
+  }
 }
+
+const store = configureStore(initialState)
+
+ReactDOM.render(
+  <Provider store={store}>
+    <DexApp />
+  </Provider>,
+  document.querySelector('[data-dex-app]')
+);
