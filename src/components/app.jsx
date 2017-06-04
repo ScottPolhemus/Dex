@@ -58,8 +58,6 @@ class DexApp extends Component {
     return (<div className={className}>
       <div className="dex-header">
         <PokedexLayoutToggle onChangeLayout={::this.updateLayout} layout={layout} />
-        <RegionsSelector onChangeRegions={::this.updateRegion} regions={regions} />
-        <GamesSelector onChangeGames={::this.updateGames} games={games} />
       </div>
       <div className="dex-list">
         <PokemonListContainer layout={layout} regions={regions} games={games} />

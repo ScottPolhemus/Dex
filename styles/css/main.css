@@ -90,6 +90,8 @@ body {
   padding: 1.5em; }
   .pokemon-detail h1 {
     font-size: 3em; }
+  .pokemon-detail img {
+    max-width: 100%; }
 
 .pokemon-family {
   margin-top: 1em; }
