@@ -35,7 +35,7 @@ export function fetchArt(species) {
     const feedparser = new FeedParser();
     
     req.on('error', function (error) {
-      // handle request errors
+      // TODO: handle request errors
     });
     
     req.on('response', function (res) {
@@ -49,7 +49,7 @@ export function fetchArt(species) {
     })
     
     feedparser.on('error', function (error) {
-      // handle parse errors
+      // TODO: handle parse errors
     })
     
     feedparser.on('readable', function () {
@@ -63,7 +63,6 @@ export function fetchArt(species) {
 
     feedparser.on('end', function() {
       dispatch(receiveArt({species, results}))
-      console.log('fetched')
     })
   }
 }

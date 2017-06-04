@@ -95,3 +95,15 @@ export const artResults = createSelector(
   art,
   art => art.results
 )
+
+export const selectedPokemonArt = createSelector(
+  selectedPokemon,
+  artResults,
+  (selected, results) => {
+    if (results) {
+      return results[selected.species];
+    }
+    
+    return []
+  }
+)

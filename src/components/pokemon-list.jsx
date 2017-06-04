@@ -5,16 +5,16 @@ export default class PokemonList extends Component {
   static propTypes = {
     onSelectPokemon: PropTypes.func.isRequired,
     selectedPokemon: PropTypes.object,
-    pokemonList: PropTypes.array,
+    pokedexList: PropTypes.array,
     layout: PropTypes.string
   }
   constructor(props) {
     super(props)
   }
   renderPokemonList() {
-    const {pokemonList, selectedPokemon, onSelectPokemon} = this.props
-    if (pokemonList.length) {
-      return pokemonList.map((p, key) => {
+    const {pokedexList, selectedPokemon, onSelectPokemon} = this.props
+    if (pokedexList.length) {
+      return pokedexList.map((p, key) => {
         const className = (selectedPokemon && selectedPokemon['id'] === p['id']) ? 'is-active' : ''
         const dexNum = ("00"+p['ndex']).slice(-3)
 
