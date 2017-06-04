@@ -1,29 +1,26 @@
 import React, { Component, PropTypes } from 'react'
-import { connect } from 'nuclear-js-react-addons'
+import { connect } from 'react-redux'
+import _ from 'lodash'
+
+import { selectPokemon, fetchArt } from '../actions';
+import { artResults, pokemonList, selectedPokemon, selectedPokemonFamily } from '../selectors'
 
 import PokemonDetail from './pokemon-detail.jsx'
-import getters from '../modules/pokemon/getters'
-import actions from '../modules/pokemon/actions'
 
-@connect(props => ({
-  selectedPokemon: getters.selectedPokemon,
-  selectedPokemonFamily: getters.selectedPokemonFamily
-}))
-export default class PokemonDetailContainer extends Component {
-  static propTypes = {
-    selectedPokemon: PropTypes.object,
-    selectedPokemonFamily: PropTypes.object,
-    layout: PropTypes.string.isRequired
-  }
-  render() {
-    const {
-      selectedPokemon,
-      selectedPokemonFamily,
-      layout
-    } = this.props
+const mapStateToProps = (state) => ({
+  artResults: artResults(state),
+  pokemonList: pokemonList(state),
+  selectedPokemon: selectedPokemon(state),
+  selectedPokemonFamily: selectedPokemonFamily(state)
+});
 
-    return (<PokemonDetail pokemon={selectedPokemon} family={selectedPokemonFamily} onSelectPokemon={(selectedPokemon) => {
-        actions.selectPokemon(selectedPokemon)
-    }} layout={layout} />)
+const mapDispatchToProps = (dispatch) => ({
+  onSelectPokemon: (selectedPokemon) => {
+    dispatch(selectPokemon(selectedPokemon))
+  },
+  fetchArt: (pokemon) => {
+    dispatch(fetchArt(pokemon))
   }
-}
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PokemonDetail)

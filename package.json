@@ -4,19 +4,25 @@
   "description": "Pokédex Application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "git clone https://github.com/veekun/pokedex data/veekun"
   },
   "author": "Scott Polhemus <scott@polhem.us>",
   "license": "ISC",
   "dependencies": {
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-react": "^6.16.0",
-    "csv-parse": "^1.1.7",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "csv-parse": "^1.2.0",
+    "feedparser": "^2.1.0",
     "keymirror": "^0.1.1",
-    "nuclear-js": "^1.4.0",
-    "nuclear-js-react-addons": "^0.4.1",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-saga": "^0.14.6",
+    "redux-thunk": "^2.2.0",
+    "request": "^2.81.0",
+    "reselect": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.4",
@@ -31,6 +37,7 @@
     "gulp-sass": "^3.0.0",
     "gulp-sourcemaps": "^1.9.1",
     "node-csvify": "0.0.6",
+    "redux-devtools": "^3.3.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.8.0"
@@ -43,7 +50,8 @@
     "plugins": [
       "transform-decorators-legacy",
       "transform-class-properties",
-      "transform-function-bind"
+      "transform-function-bind",
+      "transform-object-rest-spread"
     ]
   }
 }

@@ -5,7 +5,7 @@ export default class PokemonList extends Component {
   static propTypes = {
     onSelectPokemon: PropTypes.func.isRequired,
     selectedPokemon: PropTypes.object,
-    pokemonList: PropTypes.object,
+    pokemonList: PropTypes.array,
     layout: PropTypes.string
   }
   constructor(props) {
@@ -13,24 +13,23 @@ export default class PokemonList extends Component {
   }
   renderPokemonList() {
     const {pokemonList, selectedPokemon, onSelectPokemon} = this.props
-    if (pokemonList.size) {
+    if (pokemonList.length) {
       return pokemonList.map((p, key) => {
-        const className = (selectedPokemon && selectedPokemon.get('id') === p.get('id')) ? 'is-active' : ''
-        const dexNum = ("00"+p.get('ndex')).slice(-3)
+        const className = (selectedPokemon && selectedPokemon['id'] === p['id']) ? 'is-active' : ''
+        const dexNum = ("00"+p['ndex']).slice(-3)
 
         return (<li key={key} className={className} onClick={() => {
-          onSelectPokemon(p.get('id'))
+          onSelectPokemon(p['id'])
         }}>
-          <img className="image" src={`http://assets.pokemon.com/assets/cms2/img/pokedex/full/${dexNum}.png`} />
-          <span className="number">{p.get('ndex')}</span>
-          <span className="name"> {p.get('species')}</span>
+          {/*<img className="image" src={`http://assets.pokemon.com/assets/cms2/img/pokedex/full/${dexNum}.png`} />*/}
+          <span className="number">{p['ndex']}</span>
+          <span className="name"> {p['species']}</span>
         </li>)
-      }).toArray()
+      })
     }
   }
   render() {
     return (<div className="pokemon-list">
-      <input type="search" />
       <ul>
         {this.renderPokemonList()}
       </ul>

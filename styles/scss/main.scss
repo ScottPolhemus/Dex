@@ -42,6 +42,18 @@ body {
       }
     }
   }
+
+  ul {
+    .dex-layout-grid & {
+      text-align: justify;
+      // display: flex;
+    }
+  }
+}
+
+.dex-detail {
+  flex: 1;
+  overflow: auto;
 }
 
 .pokemon-detail {
@@ -49,6 +61,10 @@ body {
 
   h1 {
     font-size: 3em;
+  }
+  
+  img {
+    max-width: 100%;
   }
 
   // .dex-layout-grid & {

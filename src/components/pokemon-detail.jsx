@@ -2,31 +2,52 @@ import React, {Component, PropTypes} from 'react'
 import _ from 'lodash'
 
 function renderEvoTree(pokemon) {
-  if (pokemon.get('evolutions')) {
-    return (<ul key={pokemon.get('species')}>
-      <li>{pokemon.get('species')}
-      {pokemon.get('evolutions').map((p) => {
+  if (pokemon['evolutions']) {
+    return (<ul key={pokemon['id']}>
+      <li>{pokemon['species']}
+      {pokemon['evolutions'].map((p) => {
         return renderEvoTree(p)
       })}
       </li>
     </ul>)
   }
 
-  return (<ul key={pokemon.get('species')}><li>{pokemon.get('species')}</li></ul>)
+  return (<ul key={pokemon['id']}><li>{pokemon['species']}</li></ul>)
 }
 
 export default class PokemonDetail extends Component {
   static propTypes = {
-    pokemon: PropTypes.object,
-    family: PropTypes.object,
-    onSelectPokemon: PropTypes.func.isRequired
+    selectedPokemon: PropTypes.object,
+    selectedPokemonFamily: PropTypes.object,
+    artResults: PropTypes.object,
+    onSelectPokemon: PropTypes.func.isRequired,
+    fetchArt: PropTypes.func.isRequired
   }
   constructor(props) {
     super(props)
   }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.selectedPokemon.species !== this.props.selectedPokemon.species) {
+      console.log('fetch '+nextProps.selectedPokemon.species)
+      this.props.fetchArt(nextProps.selectedPokemon.species);
+    }
+  }
   renderFamily() {
-    if (this.props.family.get('evolutions')) {
-      return (<div className="pokemon-family">{renderEvoTree(this.props.family)}</div>)
+    if (this.props.selectedPokemonFamily && this.props.selectedPokemonFamily['evolutions']) {
+      return (<div className="pokemon-family">{renderEvoTree(this.props.selectedPokemonFamily)}</div>)
+    }
+  }
+  renderFanArt() {
+    const {artResults, selectedPokemon} = this.props;
+    if (artResults) {
+      const art = artResults[selectedPokemon.species]
+
+      if(art && art.length) {
+        const first = art[0];
+        return (<div>
+          <img src={first['media:content']['@']['url']} />
+        </div>);
+      }
     }
   }
   render() {
@@ -36,7 +57,7 @@ export default class PokemonDetail extends Component {
       class: pClass,
       height,
       weight
-    } = this.props.pokemon.toJS()
+    } = this.props.selectedPokemon || {}
 
     const dexNum = ("00"+ndex).slice(-3)
 
@@ -48,7 +69,7 @@ export default class PokemonDetail extends Component {
       return (<div className="pokemon-detail">
         <h1>{species}</h1>
         <h2>{pClass} - {height}, {weight}</h2>
-        <img src={`http://assets.pokemon.com/assets/cms2/img/pokedex/full/${dexNum}.png`} />
+        {this.renderFanArt()}
         {this.renderFamily()}
       </div>)
     }
