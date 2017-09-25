@@ -3,15 +3,14 @@ import { connect } from 'react-redux'
 import _ from 'lodash'
 
 import { selectPokemon, fetchArt } from '../actions';
-import { artResults, pokemonList, selectedPokemon, selectedPokemonFamily } from '../selectors'
+import { selectedPokemon, selectedPokemonFamily, selectedPokemonArt } from '../selectors'
 
 import PokemonDetail from './pokemon-detail.jsx'
 
 const mapStateToProps = (state) => ({
-  artResults: artResults(state),
-  pokemonList: pokemonList(state),
   selectedPokemon: selectedPokemon(state),
-  selectedPokemonFamily: selectedPokemonFamily(state)
+  selectedPokemonFamily: selectedPokemonFamily(state),
+  selectedPokemonArt: selectedPokemonArt(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

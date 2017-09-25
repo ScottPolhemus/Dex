@@ -50,21 +50,36 @@ class DexApp extends Component {
   updateRegion(region) {
     this.setState({region})
   }
-  render() {
-    const {layout, regions, games} = this.state
-
-    const className = `dex-app dex-layout-${layout}`
-
-    return (<div className={className}>
+  renderHeader() {
+    const {layout} = this.state
+    return (
       <div className="dex-header">
         <PokedexLayoutToggle onChangeLayout={::this.updateLayout} layout={layout} />
       </div>
+    );
+  }
+  renderList() {
+    const {layout, regions, games} = this.state
+    return (
       <div className="dex-list">
         <PokemonListContainer layout={layout} regions={regions} games={games} />
       </div>
+    )
+  }
+  renderDetail() {
+    const {layout, regions, games} = this.state
+    return (
       <div className="dex-detail">
         <PokemonDetailContainer layout={layout} regions={regions} games={games} />
       </div>
+    );
+  }
+  render() {
+    const className = `dex-app dex-layout-${this.state.layout}`
+
+    return (<div className={className}>
+      {this.renderList()}
+      {this.renderDetail()}
     </div>)
   }
 }

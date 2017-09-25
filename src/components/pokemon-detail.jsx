@@ -19,7 +19,7 @@ export default class PokemonDetail extends Component {
   static propTypes = {
     selectedPokemon: PropTypes.object,
     selectedPokemonFamily: PropTypes.object,
-    artResults: PropTypes.object,
+    selectedPokemonArt: PropTypes.array,
     onSelectPokemon: PropTypes.func.isRequired,
     fetchArt: PropTypes.func.isRequired
   }
@@ -28,7 +28,6 @@ export default class PokemonDetail extends Component {
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.selectedPokemon.species !== this.props.selectedPokemon.species) {
-      console.log('fetch '+nextProps.selectedPokemon.species)
       this.props.fetchArt(nextProps.selectedPokemon.species);
     }
   }
@@ -38,16 +37,12 @@ export default class PokemonDetail extends Component {
     }
   }
   renderFanArt() {
-    const {artResults, selectedPokemon} = this.props;
-    if (artResults) {
-      const art = artResults[selectedPokemon.species]
-
-      if(art && art.length) {
-        const first = art[0];
-        return (<div>
-          <img src={first['media:content']['@']['url']} />
-        </div>);
-      }
+    const {selectedPokemonArt} = this.props;
+    if (selectedPokemonArt && selectedPokemonArt.length) {
+      const first = selectedPokemonArt[0];
+      return (<div>
+        <img src={first['media:content']['@']['url']} />
+      </div>);
     }
   }
   render() {

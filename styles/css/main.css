@@ -62,23 +62,24 @@ body {
         -ms-flex: 1;
             flex: 1; }
 
-.pokemon-list li {
-  cursor: pointer; }
-  .pokemon-list li.is-active {
-    font-weight: bold; }
-  .dex-layout-grid .pokemon-list li {
-    display: inline-block;
-    width: 100px;
-    height: 100px; }
-  .pokemon-list li img {
-    max-width: 100%; }
-    .dex-layout-list .pokemon-list li img {
-      max-width: 40px;
+.pokemon-list {
+  padding: 1.5em; }
+  .pokemon-list li {
+    cursor: pointer; }
+    .pokemon-list li.is-active {
+      font-weight: bold; }
+    .dex-layout-grid .pokemon-list li {
       display: inline-block;
-      vertical-align: middle; }
-
-.dex-layout-grid .pokemon-list ul {
-  text-align: justify; }
+      width: 100px;
+      height: 100px; }
+    .pokemon-list li img {
+      max-width: 100%; }
+      .dex-layout-list .pokemon-list li img {
+        max-width: 40px;
+        display: inline-block;
+        vertical-align: middle; }
+  .dex-layout-grid .pokemon-list ul {
+    text-align: justify; }
 
 .dex-detail {
   -webkit-box-flex: 1;
