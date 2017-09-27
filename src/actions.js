@@ -29,7 +29,7 @@ export function fetchArt(species) {
   return function (dispatch) {
     dispatch(requestArt())
     
-    const req = request('http://backend.deviantart.com/rss.xml?type=deviation&q=boost%3Apopular+in%3Afanart+'+species)
+    const req = request(window.location.protocol+'//backend.deviantart.com/rss.xml?type=deviation&q=boost%3Apopular+in%3Afanart+'+species)
     const results = []
     
     const feedparser = new FeedParser();

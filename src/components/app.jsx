@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 
 import PokemonListContainer from './pokemon-list-container.jsx'
 import PokemonDetailContainer from './pokemon-detail-container.jsx'
