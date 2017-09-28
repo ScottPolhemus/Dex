@@ -1,0 +1,324 @@
+{
+  "{\"filename\":\"/app/server.js\",\"env\":{},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "express",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "express"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/server.js",
+      "filenameRelative": "/app/server.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "server.js",
+      "sourceFileName": "server.js",
+      "sourceRoot": "/app",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "server"
+    },
+    "ignored": false,
+    "code": "import express from 'express';\n\nconst app = express();\n\napp.use(express.static('public'));\n\napp.get('/', (request, response) => {\n  response.sendFile(`${__dirname}/views/index.html`);\n});\n\nconst listener = app.listen(process.env.PORT, () => {\n  console.log(`Your app is listening on port ${listener.address().port}. 🚢`);\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZlci5qcyJdLCJuYW1lcyI6WyJleHByZXNzIiwiYXBwIiwidXNlIiwic3RhdGljIiwiZ2V0IiwicmVxdWVzdCIsInJlc3BvbnNlIiwic2VuZEZpbGUiLCJfX2Rpcm5hbWUiLCJsaXN0ZW5lciIsImxpc3RlbiIsInByb2Nlc3MiLCJlbnYiLCJQT1JUIiwiY29uc29sZSIsImxvZyIsImFkZHJlc3MiLCJwb3J0Il0sIm1hcHBpbmdzIjoiQUFBQSxPQUFPQSxPQUFQLE1BQW9CLFNBQXBCOztBQUVBLE1BQU1DLE1BQU1ELFNBQVo7O0FBRUFDLElBQUlDLEdBQUosQ0FBUUYsUUFBUUcsTUFBUixDQUFlLFFBQWYsQ0FBUjs7QUFFQUYsSUFBSUcsR0FBSixDQUFRLEdBQVIsRUFBYSxDQUFDQyxPQUFELEVBQVVDLFFBQVYsS0FBdUI7QUFDbENBLFdBQVNDLFFBQVQsQ0FBbUIsR0FBRUMsU0FBVSxtQkFBL0I7QUFDRCxDQUZEOztBQUlBLE1BQU1DLFdBQVdSLElBQUlTLE1BQUosQ0FBV0MsUUFBUUMsR0FBUixDQUFZQyxJQUF2QixFQUE2QixNQUFNO0FBQ2xEQyxVQUFRQyxHQUFSLENBQWEsaUNBQWdDTixTQUFTTyxPQUFULEdBQW1CQyxJQUFLLE1BQXJFO0FBQ0QsQ0FGZ0IsQ0FBakIiLCJmaWxlIjoic2VydmVyLmpzIiwic291cmNlUm9vdCI6Ii9hcHAiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgZXhwcmVzcyBmcm9tICdleHByZXNzJztcblxuY29uc3QgYXBwID0gZXhwcmVzcygpO1xuXG5hcHAudXNlKGV4cHJlc3Muc3RhdGljKCdwdWJsaWMnKSk7XG5cbmFwcC5nZXQoJy8nLCAocmVxdWVzdCwgcmVzcG9uc2UpID0+IHtcbiAgcmVzcG9uc2Uuc2VuZEZpbGUoYCR7X19kaXJuYW1lfS92aWV3cy9pbmRleC5odG1sYCk7XG59KTtcblxuY29uc3QgbGlzdGVuZXIgPSBhcHAubGlzdGVuKHByb2Nlc3MuZW52LlBPUlQsICgpID0+IHtcbiAgY29uc29sZS5sb2coYFlvdXIgYXBwIGlzIGxpc3RlbmluZyBvbiBwb3J0ICR7bGlzdGVuZXIuYWRkcmVzcygpLnBvcnR9LiDwn5qiYCk7XG59KTtcbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "server.js"
+      ],
+      "names": [
+        "express",
+        "app",
+        "use",
+        "static",
+        "get",
+        "request",
+        "response",
+        "sendFile",
+        "__dirname",
+        "listener",
+        "listen",
+        "process",
+        "env",
+        "PORT",
+        "console",
+        "log",
+        "address",
+        "port"
+      ],
+      "mappings": "AAAA,OAAOA,OAAP,MAAoB,SAApB;;AAEA,MAAMC,MAAMD,SAAZ;;AAEAC,IAAIC,GAAJ,CAAQF,QAAQG,MAAR,CAAe,QAAf,CAAR;;AAEAF,IAAIG,GAAJ,CAAQ,GAAR,EAAa,CAACC,OAAD,EAAUC,QAAV,KAAuB;AAClCA,WAASC,QAAT,CAAmB,GAAEC,SAAU,mBAA/B;AACD,CAFD;;AAIA,MAAMC,WAAWR,IAAIS,MAAJ,CAAWC,QAAQC,GAAR,CAAYC,IAAvB,EAA6B,MAAM;AAClDC,UAAQC,GAAR,CAAa,iCAAgCN,SAASO,OAAT,GAAmBC,IAAK,MAArE;AACD,CAFgB,CAAjB",
+      "file": "server.js",
+      "sourceRoot": "/app",
+      "sourcesContent": [
+        "import express from 'express';\n\nconst app = express();\n\napp.use(express.static('public'));\n\napp.get('/', (request, response) => {\n  response.sendFile(`${__dirname}/views/index.html`);\n});\n\nconst listener = app.listen(process.env.PORT, () => {\n  console.log(`Your app is listening on port ${listener.address().port}. 🚢`);\n});\n"
+      ]
+    },
+    "mtime": 1506539569870
+  },
+  "{\"filename\":\"/app/server.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],null],[[],null],[[],null],[[],null],[[],null],[[],null],[[],{\"loose\":false,\"spec\":false}],[[],null],[[],null],[[],{\"spec\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"loose\":false}],[[],null],[[],null],[[],null],[[],{\"loose\":false}],[[],null],[[],{\"loose\":false}],[[],null],[[],null],[[],{\"loose\":false}],[[],{\"async\":false,\"asyncGenerators\":false}]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/app\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.0": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "express",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "express"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/app/server.js",
+      "filenameRelative": "/app/server.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false,
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "spec": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "async": false,
+            "asyncGenerators": false
+          }
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "server.js",
+      "sourceFileName": "server.js",
+      "sourceRoot": "/app",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/app",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "server"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nvar _express = require('express');\n\nvar _express2 = _interopRequireDefault(_express);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar app = (0, _express2.default)();\n\napp.use(_express2.default.static('public'));\n\napp.get('/', function (request, response) {\n  response.sendFile(__dirname + '/views/index.html');\n});\n\nvar listener = app.listen(process.env.PORT, function () {\n  console.log('Your app is listening on port ' + listener.address().port + '. \\uD83D\\uDEA2');\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZlci5qcyJdLCJuYW1lcyI6WyJhcHAiLCJ1c2UiLCJzdGF0aWMiLCJnZXQiLCJyZXF1ZXN0IiwicmVzcG9uc2UiLCJzZW5kRmlsZSIsIl9fZGlybmFtZSIsImxpc3RlbmVyIiwibGlzdGVuIiwicHJvY2VzcyIsImVudiIsIlBPUlQiLCJjb25zb2xlIiwibG9nIiwiYWRkcmVzcyIsInBvcnQiXSwibWFwcGluZ3MiOiI7O0FBQUE7Ozs7OztBQUVBLElBQU1BLE1BQU0sd0JBQVo7O0FBRUFBLElBQUlDLEdBQUosQ0FBUSxrQkFBUUMsTUFBUixDQUFlLFFBQWYsQ0FBUjs7QUFFQUYsSUFBSUcsR0FBSixDQUFRLEdBQVIsRUFBYSxVQUFDQyxPQUFELEVBQVVDLFFBQVYsRUFBdUI7QUFDbENBLFdBQVNDLFFBQVQsQ0FBcUJDLFNBQXJCO0FBQ0QsQ0FGRDs7QUFJQSxJQUFNQyxXQUFXUixJQUFJUyxNQUFKLENBQVdDLFFBQVFDLEdBQVIsQ0FBWUMsSUFBdkIsRUFBNkIsWUFBTTtBQUNsREMsVUFBUUMsR0FBUixvQ0FBNkNOLFNBQVNPLE9BQVQsR0FBbUJDLElBQWhFO0FBQ0QsQ0FGZ0IsQ0FBakIiLCJmaWxlIjoic2VydmVyLmpzIiwic291cmNlUm9vdCI6Ii9hcHAiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgZXhwcmVzcyBmcm9tICdleHByZXNzJztcblxuY29uc3QgYXBwID0gZXhwcmVzcygpO1xuXG5hcHAudXNlKGV4cHJlc3Muc3RhdGljKCdwdWJsaWMnKSk7XG5cbmFwcC5nZXQoJy8nLCAocmVxdWVzdCwgcmVzcG9uc2UpID0+IHtcbiAgcmVzcG9uc2Uuc2VuZEZpbGUoYCR7X19kaXJuYW1lfS92aWV3cy9pbmRleC5odG1sYCk7XG59KTtcblxuY29uc3QgbGlzdGVuZXIgPSBhcHAubGlzdGVuKHByb2Nlc3MuZW52LlBPUlQsICgpID0+IHtcbiAgY29uc29sZS5sb2coYFlvdXIgYXBwIGlzIGxpc3RlbmluZyBvbiBwb3J0ICR7bGlzdGVuZXIuYWRkcmVzcygpLnBvcnR9LiDwn5qiYCk7XG59KTtcbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "server.js"
+      ],
+      "names": [
+        "app",
+        "use",
+        "static",
+        "get",
+        "request",
+        "response",
+        "sendFile",
+        "__dirname",
+        "listener",
+        "listen",
+        "process",
+        "env",
+        "PORT",
+        "console",
+        "log",
+        "address",
+        "port"
+      ],
+      "mappings": ";;AAAA;;;;;;AAEA,IAAMA,MAAM,wBAAZ;;AAEAA,IAAIC,GAAJ,CAAQ,kBAAQC,MAAR,CAAe,QAAf,CAAR;;AAEAF,IAAIG,GAAJ,CAAQ,GAAR,EAAa,UAACC,OAAD,EAAUC,QAAV,EAAuB;AAClCA,WAASC,QAAT,CAAqBC,SAArB;AACD,CAFD;;AAIA,IAAMC,WAAWR,IAAIS,MAAJ,CAAWC,QAAQC,GAAR,CAAYC,IAAvB,EAA6B,YAAM;AAClDC,UAAQC,GAAR,oCAA6CN,SAASO,OAAT,GAAmBC,IAAhE;AACD,CAFgB,CAAjB",
+      "file": "server.js",
+      "sourceRoot": "/app",
+      "sourcesContent": [
+        "import express from 'express';\n\nconst app = express();\n\napp.use(express.static('public'));\n\napp.get('/', (request, response) => {\n  response.sendFile(`${__dirname}/views/index.html`);\n});\n\nconst listener = app.listen(process.env.PORT, () => {\n  console.log(`Your app is listening on port ${listener.address().port}. 🚢`);\n});\n"
+      ]
+    },
+    "mtime": 1506539569870
+  }
+}
