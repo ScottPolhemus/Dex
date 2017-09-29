@@ -5,6 +5,7 @@ export const SELECT_POKEMON = 'SELECT_POKEMON'
 export const REQUEST_ART = 'REQUEST_ART'
 export const RECEIVE_ART = 'RECEIVE_ART'
 
+
 export const selectPokemon = function(pokemon) {
   return {
     type: SELECT_POKEMON,

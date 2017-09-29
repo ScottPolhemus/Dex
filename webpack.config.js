@@ -33,20 +33,7 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            "presets": [
-              "es2015",
-              "react"
-            ],
-            "plugins": [
-              "transform-decorators-legacy",
-              "transform-class-properties",
-              "transform-function-bind",
-              "transform-object-rest-spread"
-            ],
-            babelrc: false
-          }
+          loader: 'babel-loader'
         }
       }
     ]
