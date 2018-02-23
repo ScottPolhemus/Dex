@@ -2,6 +2,8 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import _ from 'lodash'
 
+import PokemonArt from './pokemon-art-container.jsx';
+
 function renderEvoTree(pokemon) {
   if (pokemon['evolutions']) {
     return (<ul key={pokemon['id']}>
@@ -20,17 +22,10 @@ export default class PokemonDetail extends Component {
   static propTypes = {
     selectedPokemon: PropTypes.object,
     selectedPokemonFamily: PropTypes.object,
-    selectedPokemonArt: PropTypes.array,
-    onSelectPokemon: PropTypes.func.isRequired,
-    fetchArt: PropTypes.func.isRequired
+    onSelectPokemon: PropTypes.func.isRequired
   }
   constructor(props) {
     super(props)
-  }
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.selectedPokemon.species !== this.props.selectedPokemon.species) {
-      this.props.fetchArt(nextProps.selectedPokemon.species);
-    }
   }
   renderFamily() {
     if (this.props.selectedPokemonFamily && this.props.selectedPokemonFamily['evolutions']) {
@@ -38,13 +33,7 @@ export default class PokemonDetail extends Component {
     }
   }
   renderFanArt() {
-    const {selectedPokemonArt} = this.props;
-    if (selectedPokemonArt && selectedPokemonArt.length) {
-      const first = selectedPokemonArt[0];
-      return (<div>
-        <img src={first['media:content']['@']['url']} />
-      </div>);
-    }
+    return (<PokemonArt selectedPokemon={this.props.selectedPokemon} />)
   }
   render() {
     const {

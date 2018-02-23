@@ -1,0 +1,3 @@
+- Art attributions
+- Art carousel?
+- Region or game/gen toggles

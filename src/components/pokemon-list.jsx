@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Fuse from 'fuse.js'
 import _ from 'lodash'
@@ -14,7 +14,7 @@ export default class PokemonList extends Component {
     super()
     
     this.state = {
-      search: ``
+      search: ''
     }
   }
   renderSearchInput() {
@@ -43,6 +43,9 @@ export default class PokemonList extends Component {
 
         return (<li key={key} className={className} onClick={() => {
           onSelectPokemon(p['id'])
+          this.setState({
+            search: ''
+          })
         }}>
           {/*<img className="image" src={`http://assets.pokemon.com/assets/cms2/img/pokedex/full/${dexNum}.png`} />*/}
           <span className="number">{p['ndex']}</span>
